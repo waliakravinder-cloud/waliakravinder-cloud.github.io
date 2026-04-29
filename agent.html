@@ -142,6 +142,7 @@
             <button id="actEscalate"  class="text-xs bg-rose-700 text-white py-2 rounded hover:bg-rose-800">Escalate to supervisor</button>
             <button id="actThank"     class="text-xs bg-amber-600 text-white py-2 rounded hover:bg-amber-700">Send thank-you</button>
             <button id="actNote"      class="text-xs bg-slate-200 text-slate-800 py-2 rounded hover:bg-slate-300">Add note</button>
+            <button id="actEmail"     class="text-xs bg-indigo-700 text-white py-2 rounded hover:bg-indigo-800 col-span-2">Send email to citizen</button>
           </div>
           <div id="actionMsg" class="text-xs text-emerald-700 mt-2"></div>
         </section>
@@ -386,6 +387,24 @@ async function sendSMSThankYou(citizenName, phoneNumber) {
   return { ok: true };
 }
 
+function sendCitizenEmail(citizen) {
+  if (!citizen || !citizen.email) {
+    flash("No citizen email found.", true);
+    return;
+  }
+
+  const subject = encodeURIComponent("Thank You from HooiserHyperdrive Civic Engagement Desk");
+  const body = encodeURIComponent(
+    `Hi ${citizen.name},\n\n` +
+    "Thank you for your continued civic engagement. We appreciate your participation and partnership in making our community better.\n\n" +
+    "Best regards,\n" +
+    "HooiserHyperdrive Civic Engagement Team"
+  );
+
+  window.location.href = `mailto:${citizen.email}?subject=${subject}&body=${body}`;
+  flash(`Opened email draft for ${citizen.name} at ${citizen.email}.`);
+}
+
 // Wire up controls
 document.getElementById("lookupBtn").onclick = () => doLookup(document.getElementById("lookup").value);
 document.getElementById("lookup").addEventListener("keydown", e => { if (e.key === "Enter") doLookup(e.target.value); });
@@ -411,6 +430,7 @@ document.getElementById("actNote").onclick = () => {
   const note = prompt("Add note (saved to case):");
   if (note) flash("Note saved to case.");
 };
+document.getElementById("actEmail").onclick = () => sendCitizenEmail(currentCitizen);
 document.getElementById("closeCaseBtn").onclick = () => {
   const cs = currentCitizen.openCases.shift();
   if (!cs) return;
