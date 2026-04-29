@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>User Stories - HooiserHyperdrive Civic Engagement Desk</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+<header class="brand-bar">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-3xl">🏛️</span>
+      <div>
+        <div class="font-semibold text-lg leading-tight">HooiserHyperdrive Civic Engagement Desk</div>
+        <div class="text-xs opacity-80">Product documentation</div>
+      </div>
+    </div>
+    <a href="index.html" class="text-sm underline opacity-90 hover:opacity-100">Back to home</a>
+  </div>
+</header>
+
+<main class="flex-1 max-w-5xl mx-auto px-4 py-8 w-full">
+  <div class="doc-shell">
+    <aside class="doc-toc">
+      <p class="doc-toc-title">On this page</p>
+      <ul id="doc-toc" class="doc-toc-list"></ul>
+      <p id="doc-toc-empty" class="doc-toc-empty">Loading sections...</p>
+    </aside>
+    <div class="card p-6">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <h1 class="text-2xl font-semibold text-slate-900">User Stories</h1>
+        <a href="USER_STORIES.md" class="text-sm text-blue-700 hover:underline">Open raw markdown</a>
+      </div>
+      <article id="doc-content" class="md-content mt-4"></article>
+    </div>
+  </div>
+</main>
+
+<footer class="text-center text-xs text-slate-400 py-5">© 2026 Hackathon demo · no real data</footer>
+
+<script src="js/markdown-viewer.js"></script>
+<script>
+(async function () {
+  const container = document.getElementById("doc-content");
+  const toc = document.getElementById("doc-toc");
+  const tocEmpty = document.getElementById("doc-toc-empty");
+
+  function makeSlug(text, index) {
+    const base = (text || "section").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    return base ? `${base}-${index}` : `section-${index}`;
+  }
+
+  function buildToc() {
+    const headings = Array.from(container.querySelectorAll("h2, h3"));
+    toc.innerHTML = "";
+    if (!headings.length) {
+      tocEmpty.textContent = "No sections found.";
+      return;
+    }
+    tocEmpty.style.display = "none";
+    headings.forEach((h, idx) => {
+      if (!h.id) h.id = makeSlug(h.textContent, idx + 1);
+      const li = document.createElement("li");
+      if (h.tagName === "H3") li.style.marginLeft = ".85rem";
+      const a = document.createElement("a");
+      a.href = `#${h.id}`;
+      a.textContent = h.textContent.trim();
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+  }
+
+  try {
+    const res = await fetch("USER_STORIES.md", { cache: "no-store" });
+    const markdown = await res.text();
+    container.innerHTML = MarkdownViewer.render(markdown);
+    buildToc();
+  } catch (err) {
+    container.innerHTML = "<p>Unable to load USER_STORIES.md.</p>";
+    tocEmpty.textContent = "Unable to load sections.";
+  }
+}());
+</script>
+</body>
+</html>

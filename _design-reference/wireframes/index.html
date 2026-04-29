@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Wireframes — HooiserHyperdrive Civic Engagement Desk</title>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background:#fafaf9; color:#1f2937; margin:0; }
+  header { background:#0b3b6f; color:white; padding:1rem 1.5rem; }
+  header h1 { margin:0; font-size:1.25rem; }
+  header p { margin:.2rem 0 0; opacity:.85; font-size:.85rem; }
+  main { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+  h2 { border-bottom: 2px dashed #94a3b8; padding-bottom:.4rem; margin-top:2.5rem; }
+  .wf {
+    background: white; border:1px solid #cbd5e1; border-radius:.5rem;
+    padding: 1rem; margin-top: 1rem; font-family: ui-monospace, Menlo, monospace;
+    font-size: .85rem; line-height: 1.4;
+  }
+  .wf .box  { border:1px dashed #94a3b8; padding:.5rem .75rem; border-radius:.35rem; margin:.35rem 0; background:#f8fafc; }
+  .wf .row  { display:flex; gap:.5rem; flex-wrap:wrap; }
+  .wf .row > .box { flex:1; min-width:160px; }
+  .wf .ph   { color:#64748b; }
+  .wf .lbl  { font-weight:600; color:#0b3b6f; }
+  .wf .pill { display:inline-block; padding:.1rem .5rem; border:1px solid #94a3b8; border-radius:9999px; font-size:.75rem; margin-right:.25rem; background:#f1f5f9; }
+  .wf .btn  { display:inline-block; padding:.25rem .6rem; border:1px solid #0b3b6f; color:#0b3b6f; border-radius:.25rem; background:#fff; font-size:.8rem; margin:.15rem .15rem 0 0; }
+  .wf .btn-primary { background:#0b3b6f; color:white; }
+  .wf .ascii { white-space:pre; color:#475569; }
+  .legend { font-size:.8rem; color:#475569; margin-top:.5rem; font-style:italic; }
+  nav.toc { background:white; border:1px solid #e2e8f0; border-radius:.5rem; padding:.75rem 1rem; margin-bottom: 1rem; }
+  nav.toc a { color:#0b3b6f; margin-right:1rem; text-decoration:none; font-size:.9rem; }
+  nav.toc a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wireframes — HooiserHyperdrive Civic Engagement Desk</h1>
+  <p>Low-fidelity layouts for the three core surfaces. Implementation lives in <code>/app</code>.</p>
+</header>
+
+<main>
+
+<nav class="toc">
+  <strong>Jump to:</strong>
+  <a href="#wf-citizen">1. Citizen — My Dashboard</a>
+  <a href="#wf-agent">2. Agent Desk</a>
+  <a href="#wf-supervisor">3. Supervisor — CX Insights</a>
+  <a href="#wf-flow">4. Interaction flow</a>
+</nav>
+
+<!-- ============== CITIZEN ============== -->
+<h2 id="wf-citizen">1. Citizen — My Dashboard</h2>
+<p>Goal: show standing, history, and recommended next actions; collect rating after agent interactions.</p>
+
+<div class="wf">
+  <div class="box" style="background:#0b3b6f; color:white;">
+    🏛️ <span class="lbl" style="color:white;">City Civic Portal</span> · My Dashboard
+    <span style="float:right;" class="ph">[Citizen ▼]   Switch role</span>
+  </div>
+
+  <div class="box">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
+      <div>
+        <div class="ph">Welcome back,</div>
+        <div style="font-size:1.4rem; font-weight:700;">Aisha Patel</div>
+        <span class="pill" style="background:#fef3c7;">🥇 Gold</span>
+        <span class="ph">since Apr 17, 2026</span>
+      </div>
+      <div style="text-align:right;">
+        <div class="ph">Loyalty points</div>
+        <div style="font-size:2rem; font-weight:700; color:#0b3b6f;">4,800</div>
+      </div>
+    </div>
+    <div style="margin-top:.5rem;">
+      <span class="ph">2,700 pts to Volunteer Champion</span>
+      <div class="ascii">[████████████░░░░░░░░░░░░░░░░] 64%</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box" style="flex:2;">
+      <div class="lbl">✨ Recommended for you <span class="ph">(rule-based · AI-enhanced if key)</span></div>
+      <div class="box">🌳 <strong>Spring Tree Planting</strong> — May 9 · Riverside Park
+        <div class="ph">Matches your interest in environment; happening soon.</div>
+        <span class="pill">+50 pts</span> <span class="btn btn-primary">Join</span>
+      </div>
+      <div class="box">📚 <strong>Adult Literacy Tutor</strong> — May 18 · Central Library
+        <div class="ph">High-impact opportunity for a Gold citizen.</div>
+        <span class="pill">+100 pts</span> <span class="btn btn-primary">Join</span>
+      </div>
+      <div class="box">🗳️ <strong>Participatory Budget Vote</strong> — May 12 · Online
+        <div class="ph">Quick civic action.</div>
+        <span class="pill">+15 pts</span> <span class="btn btn-primary">Join</span>
+      </div>
+    </div>
+    <div class="box" style="flex:1; min-width:240px;">
+      <div class="lbl">My impact (12 mo.)</div>
+      Programs joined &nbsp;&nbsp; <strong style="float:right;">5</strong><br/>
+      Volunteer hours &nbsp;&nbsp;&nbsp; <strong style="float:right;">12.5</strong><br/>
+      Surveys completed <strong style="float:right;">2</strong><br/>
+      Town halls &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong style="float:right;">2</strong>
+      <hr/>
+      <div class="lbl">Open cases</div>
+      <div class="box">CS-2042 · Open<br/>Pothole on Elm St not repaired</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="lbl">Engagement history</div>
+    <div class="ascii">Apr 26  Survey: Park Improvements ............ +20
+Apr 19  Volunteer: River Cleanup ............. +60
+Apr 17  Tier upgrade → Gold .................. —
+Apr 10  Town Hall attendance ................. +30
+Mar 28  Adult Literacy enrollment ............ +100</div>
+  </div>
+
+  <div class="box" style="border-left:4px solid #047857;">
+    <div class="lbl">Rate your recent interaction</div>
+    <span class="ph">INT-9002 with Agent Smith on Apr 27</span><br/>
+    ☆ ☆ ☆ ☆ ☆ &nbsp; <span class="btn btn-primary">Submit (+5 pts)</span>
+  </div>
+</div>
+<p class="legend">Implementation: <code>app/citizen.html</code></p>
+
+
+<!-- ============== AGENT ============== -->
+<h2 id="wf-agent">2. Agent Desk (primary surface)</h2>
+<p>Goal: instant 360° view when a citizen contacts; AI talking points, KB, one-click actions.</p>
+
+<div class="wf">
+  <div class="box" style="background:#0b3b6f; color:white;">
+    🎧 <span class="lbl" style="color:white;">HooiserHyperdrive Civic Engagement Desk</span> — Agent Desk · 🟢 Live
+    <span style="float:right;" class="ph">Agent Smith ▼ &nbsp; Switch role</span>
+  </div>
+
+  <div class="box">
+    <div class="lbl">CITIZEN LOOKUP</div>
+    [ phone / email / ID / name _________________ ] <span class="btn btn-primary">Search</span> &nbsp; [Quick pick ▼]
+  </div>
+
+  <div class="box">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
+      <div>
+        <span style="font-size:1.3rem; font-weight:700;">Aisha Patel</span>
+        <span class="pill" style="background:#fef3c7;">🥇 Gold</span><br/>
+        <span class="ph">C-Gold-001 · 555-0142 · aisha.patel@... · District 4 · lang: EN</span>
+      </div>
+      <div style="text-align:right;">
+        <div class="ph">Loyalty points</div>
+        <div style="font-size:1.6rem; font-weight:700; color:#0b3b6f;">4,800</div>
+        <div class="ph">2,700 pts to Volunteer Champion (64%)</div>
+      </div>
+    </div>
+    <div class="box" style="background:#fef3c7; border-color:#f59e0b;">
+      🎉 <strong>Suggested talking point:</strong> Thank Aisha for reaching Gold 12 days ago — recognize her commitment to environment.
+      <span style="float:right;" class="ph">Dismiss</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box" style="flex:2;">
+      <div class="lbl">✨ AI next-best actions</div>
+      <div class="box" style="border-color:#10b981; background:#ecfdf5;">
+        <span class="pill" style="background:#047857; color:white;">TOP PICK</span>
+        <strong>Adult Literacy Tutor</strong> — May 18 · Central Library · conf 92%
+        <div class="ph">High-impact opportunity for a Gold citizen; matches her interest in education.</div>
+        <span class="pill">+100 pts</span>
+        <span class="btn btn-primary">Enroll</span> <span class="btn">👍</span> <span class="btn">👎</span>
+      </div>
+      <div class="box">🌳 <strong>Spring Tree Planting</strong> · +50 pts <span class="btn btn-primary">Enroll</span></div>
+      <div class="box">🏖️ <strong>Beach Cleanup Day</strong> · +40 pts <span class="btn btn-primary">Enroll</span></div>
+
+      <div class="lbl" style="margin-top:.75rem;">Engagement timeline <span class="ph">[All channels ▼]</span></div>
+      <div class="ascii">Apr 26  Survey: Park Improvements ............ +20
+Apr 19  Volunteer: River Cleanup ............. +60
+Apr 17  Tier upgrade → Gold .................. —
+Apr 10  Town Hall attendance ................. +30
+Mar 28  Adult Literacy enrollment ............ +100</div>
+    </div>
+
+    <div class="box" style="flex:1; min-width:260px;">
+      <div class="lbl">Open cases</div>
+      <div class="box">CS-2042 · Open · Normal<br/>Pothole on Elm St not repaired</div>
+      <span class="btn btn-primary">Close case &amp; request rating</span>
+
+      <div class="lbl" style="margin-top:.75rem;">📚 Knowledge base</div>
+      [ Search KB: "pothole" __________ ]
+      <div class="box">Reporting &amp; repair timeline for potholes <span class="ph">(updated Apr 1)</span><br/>
+        <span class="ph">Potholes triaged within 48h; arterials in 5d, residential 10d…</span><br/>
+        <span class="btn">Send to citizen</span></div>
+
+      <div class="lbl" style="margin-top:.75rem;">Quick actions</div>
+      <span class="btn">Enroll top rec</span>
+      <span class="btn">Escalate</span>
+      <span class="btn">Send thank-you</span>
+      <span class="btn">Add note</span>
+    </div>
+  </div>
+</div>
+<p class="legend">Implementation: <code>app/agent.html</code></p>
+
+
+<!-- ============== SUPERVISOR ============== -->
+<h2 id="wf-supervisor">3. Supervisor — CX Insights</h2>
+<p>Goal: surface coaching opportunities and team performance from rating data.</p>
+
+<div class="wf">
+  <div class="box" style="background:#0b3b6f; color:white;">
+    📊 <span class="lbl" style="color:white;">HooiserHyperdrive Civic Engagement Desk</span> — Supervisor · CX Insights
+  </div>
+
+  <div class="row">
+    <div class="box"><div class="ph">Avg CSAT (30d)</div><div style="font-size:1.5rem; font-weight:700;">4.50</div></div>
+    <div class="box"><div class="ph">Conversions (30d)</div><div style="font-size:1.5rem; font-weight:700;">111</div></div>
+    <div class="box"><div class="ph">Escalations (30d)</div><div style="font-size:1.5rem; font-weight:700;">15</div></div>
+    <div class="box"><div class="ph">Coaching flags</div><div style="font-size:1.5rem; font-weight:700; color:#be123c;">2</div></div>
+  </div>
+
+  <div class="row">
+    <div class="box" style="flex:1;">
+      <div class="lbl">Agent CSAT</div>
+      <div class="ascii">Agent          Region     30d   90d   Conv  Esc
+Agent Smith    Region A   4.7   4.6   38    4
+Agent Jones ⚠  Region B   3.9   4.1   22    9
+Agent Patel    Region A   4.9   4.8   51    2</div>
+    </div>
+    <div class="box" style="flex:1;">
+      <div class="lbl">Coaching opportunities</div>
+      <div class="box" style="border-left:4px solid #f43f5e; background:#fff1f2;">
+        INT-9001 · Apr 28 · call · CSAT 2★<br/>
+        <strong>Agent Jones</strong> with Maria Lopez<br/>
+        <em class="ph">"Felt rushed; didn't fully answer my recycling question."</em><br/>
+        <span class="btn">Assign coaching</span> <span class="btn">Dismiss</span>
+      </div>
+      <div class="box" style="border-left:4px solid #f43f5e; background:#fff1f2;">
+        INT-9004 · Apr 22 · call · CSAT 2★<br/>
+        <strong>Agent Jones</strong> with Maria Lopez (repeat)<br/>
+        <em class="ph">"Same issue, second call. Frustrating."</em>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="legend">Implementation: <code>app/supervisor.html</code></p>
+
+
+<!-- ============== FLOW ============== -->
+<h2 id="wf-flow">4. End-to-end interaction flow</h2>
+<div class="wf">
+  <div class="ascii">┌─────────────┐    ┌──────────────┐    ┌────────────────┐    ┌──────────────┐
+│  CITIZEN    │ →  │ Civic Portal │ →  │  ENGAGEMENT    │ →  │ AI Recommender│
+│  acts       │    │ (web/mobile) │    │  Ledger        │    │  (rules+LLM)  │
+└─────────────┘    └──────────────┘    └────────────────┘    └──────┬───────┘
+                                                                    │
+                                                                    ▼
+┌─────────────┐    ┌──────────────┐    ┌────────────────┐    ┌──────────────┐
+│  CITIZEN    │ ←  │  RATING      │ ←  │  AGENT DESK    │ ←  │  CITIZEN     │
+│  rates      │    │  prompt      │    │  (lookup,      │    │  contacts    │
+│  agent      │    │  on close    │    │   AI insights, │    │  agency      │
+│             │    │              │    │   KB, actions) │    │              │
+└─────┬───────┘    └──────────────┘    └────────┬───────┘    └──────────────┘
+      │                                         │
+      ▼                                         ▼
+┌─────────────┐                        ┌────────────────┐
+│ Loyalty pts │                        │  SUPERVISOR    │
+│ Tier update │                        │  CX dashboard  │
+│ Milestone   │                        │  Coaching flags│
+└─────────────┘                        └────────────────┘</div>
+</div>
+
+</main>
+</body>
+</html>
