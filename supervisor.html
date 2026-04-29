@@ -53,6 +53,12 @@
     </section>
   </div>
 
+  <!-- Escalations -->
+  <section class="card p-5">
+    <h2 class="font-semibold text-slate-900 mb-3">Open escalations</h2>
+    <div id="escalationList" class="space-y-2 text-sm"></div>
+  </section>
+
   <!-- Recent interactions -->
   <section class="card p-5">
     <h2 class="font-semibold text-slate-900 mb-3">Recent interactions</h2>
@@ -98,6 +104,15 @@ function renderAgents() {
   }).join("");
 }
 
+function assignCoaching(agentName, intId, btn) {
+  const confirmed = confirm(`Assign a coaching session to ${agentName}?\n\nInteraction: ${intId}`);
+  if (!confirmed) return;
+  btn.textContent = 'Coaching assigned ✓';
+  btn.disabled = true;
+  btn.classList.remove('text-blue-700');
+  btn.classList.add('text-emerald-600');
+}
+
 function renderCoach() {
   const lows = state.recentInteractions.filter(i => i.csat !== null && i.csat <= 2);
   const el = document.getElementById("coachQueue");
@@ -105,7 +120,7 @@ function renderCoach() {
   el.innerHTML = lows.map(i => {
     const a = state.agents.find(x=>x.id===i.agentId);
     const c = state.citizens.find(x=>x.id===i.citizenId);
-    return `<div class="border-l-4 border-rose-400 bg-rose-50 px-3 py-2 rounded">
+    return `<div class="border-l-4 border-rose-400 bg-rose-50 px-3 py-2 rounded" data-int-id="${i.id}">
       <div class="flex justify-between text-xs text-slate-600">
         <span>${i.id} · ${SCED.fmtDate(i.date)} · ${i.channel}</span>
         <span>CSAT ${i.csat}★</span>
@@ -113,9 +128,28 @@ function renderCoach() {
       <div><strong>${a?a.name:i.agentId}</strong> with ${c?c.name:i.citizenId}</div>
       <div class="text-slate-600 italic">"${i.comment || '(no comment)'}"</div>
       <div class="mt-1 text-xs">
-        <button class="text-blue-700 hover:underline mr-3">Assign coaching</button>
+        <button onclick="assignCoaching('${a?a.name:i.agentId}','${i.id}',this)" class="text-blue-700 hover:underline mr-3">Assign coaching</button>
         <button class="text-slate-500 hover:underline">Dismiss</button>
       </div>
+    </div>`;
+  }).join("");
+}
+
+function renderEscalations() {
+  const escs = state.recentInteractions.filter(i => i.escalated === true);
+  const el = document.getElementById("escalationList");
+  if (!el) return;
+  if (escs.length === 0) { el.innerHTML = `<div class="text-slate-400">No open escalations.</div>`; return; }
+  el.innerHTML = escs.map(i => {
+    const a = state.agents.find(x=>x.id===i.agentId);
+    const c = state.citizens.find(x=>x.id===i.citizenId);
+    return `<div class="border-l-4 border-amber-400 bg-amber-50 px-3 py-2 rounded">
+      <div class="flex justify-between text-xs text-slate-600">
+        <span>${i.id} · ${SCED.fmtDate(i.date)} · ${i.channel}</span>
+        <span class="font-semibold text-amber-700">Escalated</span>
+      </div>
+      <div class="font-medium"><strong>${a?a.name:i.agentId}</strong> · Citizen: ${c?c.name:i.citizenId}</div>
+      <div class="text-slate-600 italic mt-0.5">"${i.escalationReason || i.comment || ''}"</div>
     </div>`;
   }).join("");
 }
@@ -140,7 +174,7 @@ function renderInteractions() {
 
 document.getElementById("resetDemo").onclick = (e) => { e.preventDefault(); SCED.Store.reset(); location.reload(); };
 
-renderKPIs(); renderAgents(); renderCoach(); renderInteractions();
+renderKPIs(); renderAgents(); renderCoach(); renderEscalations(); renderInteractions();
 </script>
 </body>
 </html>
