@@ -53,6 +53,19 @@ body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-se
   border-radius: .25rem; background:#f9fafb; color:#374151;
 }
 
+/* Select/option styling for better visibility */
+select {
+  color: #1f2937;
+  background-color: #ffffff;
+  option { background-color: #ffffff; color: #1f2937; }
+}
+
+select option {
+  color: #1f2937;
+  background-color: #ffffff;
+  padding: .5rem;
+}
+
 .md-content { color:#334155; line-height:1.65; }
 .md-content h1, .md-content h2, .md-content h3, .md-content h4 { color:#0f172a; font-weight:700; margin-top:1.2rem; margin-bottom:.6rem; }
 .md-content h1 { font-size:1.6rem; }

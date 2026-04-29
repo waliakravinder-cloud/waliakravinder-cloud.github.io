@@ -23,9 +23,9 @@ const DEFAULT_DATA = {
   citizens: [
     {
       id: "C-Gold-001",
-      name: "Aisha Patel",
+      name: "Sophie Pavia",
       email: "aisha.patel@example.gov",
-      phone: "555-0142",
+      phone: "864-915-8385",
       language: "en",
       district: "District 4",
       interests: ["environment", "education"],
