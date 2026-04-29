@@ -417,7 +417,24 @@ document.getElementById("newCaseSubject").addEventListener("keydown", e => {
   if (e.key === "Enter") createCase();
 });
 document.getElementById("actEnrollAll").onclick = () => { if (lastRecs[0]) enroll(lastRecs[0].id); };
-document.getElementById("actEscalate").onclick = () => flash(`Escalated to supervisor (${currentCitizen.tier} tier — priority queue).`);
+document.getElementById("actEscalate").onclick = () => {
+  const reason = prompt("Escalation reason (required):");
+  if (!reason || !reason.trim()) { flash("Escalation cancelled.", true); return; }
+  const escRec = {
+    id: "ESC-" + Date.now(),
+    agentId: currentAgent,
+    citizenId: currentCitizen.id,
+    date: new Date().toISOString().slice(0, 10),
+    channel: "agent-escalation",
+    csat: null,
+    comment: reason.trim(),
+    escalated: true,
+    escalationReason: reason.trim()
+  };
+  state.recentInteractions.unshift(escRec);
+  SCED.Store.save(state);
+  flash(`Escalated to supervisor (${currentCitizen.tier} tier) — reason logged.`);
+};
 document.getElementById("actThank").onclick = async () => {
   const smsResult = await sendSMSThankYou(currentCitizen.name, currentCitizen.phone);
   if (smsResult.ok) {

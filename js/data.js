@@ -24,7 +24,7 @@ const DEFAULT_DATA = {
     {
       id: "C-Gold-001",
       name: "Sophie Pavia",
-      email: "aisha.patel@example.gov",
+      email: "spavia@deloitte.com",
       phone: "864-915-8385",
       language: "en",
       district: "District 4",
@@ -128,11 +128,14 @@ const DEFAULT_DATA = {
     { id: "INT-9001", agentId: "A-002", citizenId: "C-Bronze-002", date: "2026-04-28", channel: "call",   csat: 2, comment: "Felt rushed; didn't fully answer my recycling question." },
     { id: "INT-9002", agentId: "A-001", citizenId: "C-Gold-001",   date: "2026-04-27", channel: "email",  csat: 5, comment: "Quick and friendly. Resolved my pothole report fast." },
     { id: "INT-9003", agentId: "A-003", citizenId: "C-Champ-004",  date: "2026-04-26", channel: "visit",  csat: 5, comment: "Excellent — recommended a great new volunteer program." },
-    { id: "INT-9004", agentId: "A-002", citizenId: "C-Bronze-002", date: "2026-04-22", channel: "call",   csat: 2, comment: "Same issue, second call. Frustrating." }
+    { id: "INT-9004", agentId: "A-002", citizenId: "C-Bronze-002", date: "2026-04-22", channel: "call",   csat: 2, comment: "Same issue, second call. Frustrating." },
+    { id: "ESC-1001", agentId: "A-002", citizenId: "C-Bronze-002", date: "2026-04-28", channel: "call",   csat: null, comment: "Citizen demanded manager — unresolved billing dispute.", escalated: true, escalationReason: "Billing dispute unresolved after 3 contacts" },
+    { id: "ESC-1002", agentId: "A-002", citizenId: "C-New-005",    date: "2026-04-25", channel: "chat",   csat: null, comment: "Citizen threatened formal complaint over permit delay.",  escalated: true, escalationReason: "Formal complaint threat — permit processing delay" },
+    { id: "ESC-1003", agentId: "A-001", citizenId: "C-Gold-001",   date: "2026-04-21", channel: "email",  csat: null, comment: "Repeat pothole report — still unresolved after 30 days.", escalated: true, escalationReason: "Unresolved repeat infrastructure complaint" }
   ]
 };
 
-const STORAGE_KEY = "sced_demo_state_v1";
+const STORAGE_KEY = "sced_demo_state_v2";
 
 const Store = {
   load() {
