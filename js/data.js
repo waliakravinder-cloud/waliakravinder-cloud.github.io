@@ -124,6 +124,7 @@ const DEFAULT_DATA = {
     { id: "A-003", name: "Agent Patel", region: "Region A", csat30: 4.9, csat90: 4.8, conversions30: 51, escalations30: 2 }
   ],
   recentInteractions: [
+    { id: "INT-9010", agentId: "A-001", citizenId: "C-Gold-001",   date: "2026-04-29", channel: "post-case", csat: null, comment: "" },
     { id: "INT-9001", agentId: "A-002", citizenId: "C-Bronze-002", date: "2026-04-28", channel: "call",   csat: 2, comment: "Felt rushed; didn't fully answer my recycling question." },
     { id: "INT-9002", agentId: "A-001", citizenId: "C-Gold-001",   date: "2026-04-27", channel: "email",  csat: 5, comment: "Quick and friendly. Resolved my pothole report fast." },
     { id: "INT-9003", agentId: "A-003", citizenId: "C-Champ-004",  date: "2026-04-26", channel: "visit",  csat: 5, comment: "Excellent — recommended a great new volunteer program." },

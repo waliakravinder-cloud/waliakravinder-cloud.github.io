@@ -14,16 +14,23 @@
     <div class="flex items-center gap-3">
       <span class="text-2xl">🏛️</span>
       <div>
-        <div class="font-semibold leading-tight">City Civic Portal</div>
-        <div class="text-xs opacity-80">My Dashboard</div>
+        <div id="portalTitle" class="font-semibold leading-tight">City Civic Portal</div>
+        <div id="dashboardSubtitle" class="text-xs opacity-80">My Dashboard</div>
       </div>
     </div>
     <div class="flex items-center gap-3 text-sm">
       <label class="flex items-center gap-2">
-        <span class="opacity-80">Citizen:</span>
+        <span id="citizenLabel" class="opacity-80">Citizen:</span>
         <select id="citizenSelect" class="bg-white/10 border border-white/30 rounded px-2 py-1 text-white"></select>
       </label>
-      <a href="index.html" class="underline opacity-90 hover:opacity-100">Switch role</a>
+      <label class="flex items-center gap-2">
+        <span id="languageLabel" class="opacity-80">Language:</span>
+        <select id="languageSelect" class="bg-white/10 border border-white/30 rounded px-2 py-1 text-white">
+          <option value="en">English</option>
+          <option value="es">Espanol</option>
+        </select>
+      </label>
+      <a id="switchRoleLink" href="index.html" class="underline opacity-90 hover:opacity-100">Switch role</a>
     </div>
   </div>
 </header>
@@ -34,12 +41,12 @@
   <section class="card p-5 fade-in">
     <div class="flex flex-wrap items-center gap-4 justify-between">
       <div>
-        <div class="text-sm text-slate-500">Welcome back,</div>
+        <div id="welcomeLabel" class="text-sm text-slate-500">Welcome back,</div>
         <h1 id="heroName" class="text-2xl font-bold text-slate-900"></h1>
         <div id="heroTier" class="mt-1"></div>
       </div>
       <div class="text-right">
-        <div class="text-sm text-slate-500">Loyalty points</div>
+        <div id="loyaltyPointsLabel" class="text-sm text-slate-500">Loyalty points</div>
         <div id="heroPoints" class="text-4xl font-bold" style="color:var(--brand)"></div>
       </div>
     </div>
@@ -61,7 +68,7 @@
     <section class="card p-5 md:col-span-2 fade-in">
       <div class="flex items-center justify-between mb-3">
         <h2 class="font-semibold text-slate-900 flex items-center gap-2">
-          ✨ Recommended for you
+          <span id="recommendedForYouLabel">✨ Recommended for you</span>
           <span id="aiBadge" class="text-xs font-normal text-slate-500"></span>
         </h2>
         <button id="refreshRecs" class="text-xs text-blue-700 hover:underline">Refresh</button>
@@ -72,16 +79,16 @@
     <!-- Quick stats -->
     <section class="space-y-6">
       <div class="card p-5 fade-in">
-        <h2 class="font-semibold text-slate-900 mb-3">My impact (12 mo.)</h2>
+        <h2 id="impactTitle" class="font-semibold text-slate-900 mb-3">My impact (12 mo.)</h2>
         <ul class="text-sm space-y-2">
-          <li class="flex justify-between"><span>Programs joined</span><span id="statPrograms" class="font-semibold"></span></li>
-          <li class="flex justify-between"><span>Volunteer hours est.</span><span id="statHours" class="font-semibold"></span></li>
-          <li class="flex justify-between"><span>Surveys completed</span><span id="statSurveys" class="font-semibold"></span></li>
-          <li class="flex justify-between"><span>Town halls attended</span><span id="statHalls" class="font-semibold"></span></li>
+          <li class="flex justify-between"><span id="programsJoinedLabel">Programs joined</span><span id="statPrograms" class="font-semibold"></span></li>
+          <li class="flex justify-between"><span id="volunteerHoursLabel">Volunteer hours est.</span><span id="statHours" class="font-semibold"></span></li>
+          <li class="flex justify-between"><span id="surveysCompletedLabel">Surveys completed</span><span id="statSurveys" class="font-semibold"></span></li>
+          <li class="flex justify-between"><span id="townHallsLabel">Town halls attended</span><span id="statHalls" class="font-semibold"></span></li>
         </ul>
       </div>
       <div class="card p-5 fade-in">
-        <h2 class="font-semibold text-slate-900 mb-2">Open cases</h2>
+        <h2 id="openCasesTitle" class="font-semibold text-slate-900 mb-2">Open cases</h2>
         <div id="openCases" class="text-sm text-slate-600"></div>
       </div>
     </section>
@@ -89,7 +96,7 @@
 
   <!-- Engagement history -->
   <section class="card p-5 fade-in">
-    <h2 class="font-semibold text-slate-900 mb-3">Engagement history</h2>
+    <h2 id="engagementHistoryTitle" class="font-semibold text-slate-900 mb-3">Engagement history</h2>
     <div id="historyList" class="divide-y divide-slate-100"></div>
   </section>
 
@@ -97,7 +104,7 @@
   <section class="card p-5 fade-in border-l-4" style="border-color: var(--accent)">
     <div class="flex items-center justify-between flex-wrap gap-3">
       <div>
-        <h2 class="font-semibold text-slate-900">Rate your recent interaction</h2>
+        <h2 id="rateRecentTitle" class="font-semibold text-slate-900">Rate your recent interaction</h2>
         <p id="rateContext" class="text-sm text-slate-600"></p>
       </div>
       <div class="flex items-center gap-2">
@@ -109,7 +116,7 @@
   </section>
 
   <footer class="text-center text-xs text-slate-400 py-6">
-    Demo data only · <a href="#" id="resetDemo" class="underline hover:text-slate-600">Reset demo</a>
+    <span id="demoOnlyLabel">Demo data only</span> · <a href="#" id="resetDemo" class="underline hover:text-slate-600">Reset demo</a>
   </footer>
 </main>
 
@@ -118,7 +125,135 @@
 <script>
 const state = SCED.Store.load();
 let currentId = localStorage.getItem("sced_demo_citizen") || "C-Gold-001";
+let currentLang = localStorage.getItem("sced_demo_lang") || "en";
 let selectedStars = 0;
+
+const I18N = {
+  en: {
+    portalTitle: "City Civic Portal",
+    dashboardSubtitle: "My Dashboard",
+    citizenLabel: "Citizen:",
+    languageLabel: "Language:",
+    switchRoleLink: "Switch role",
+    welcomeLabel: "Welcome back,",
+    loyaltyPointsLabel: "Loyalty points",
+    recommendedForYouLabel: "✨ Recommended for you",
+    refreshRecs: "Refresh",
+    impactTitle: "My impact (12 mo.)",
+    programsJoinedLabel: "Programs joined",
+    volunteerHoursLabel: "Volunteer hours est.",
+    surveysCompletedLabel: "Surveys completed",
+    townHallsLabel: "Town halls attended",
+    openCasesTitle: "Open cases",
+    engagementHistoryTitle: "Engagement history",
+    rateRecentTitle: "Rate your recent interaction",
+    submitRating: "Submit (+5 pts)",
+    ratingThanks: "Thanks! Your feedback helps us coach our team.",
+    demoOnlyLabel: "Demo data only",
+    resetDemo: "Reset demo",
+    since: "since",
+    ptsTo: "pts to",
+    topTierReached: "Top tier reached — thank you!",
+    noOpenCases: "No open cases.",
+    opened: "Opened",
+    noActivity: "No activity yet — join a program below to start earning points!",
+    generatingRecs: "Generating recommendations...",
+    noRecs: "No recommendations right now.",
+    join: "Join",
+    couldNotEnroll: "Could not enroll:",
+    noRecentInteractions: "No recent interactions to rate.",
+    interactionWith: "Interaction",
+    withAgent: "with",
+    onDate: "on",
+    unnamedAgent: "Agent",
+    alreadyRated: "This interaction has already been rated.",
+    aiFallback: "(fallback: AI unavailable)",
+    aiEnhanced: "(AI enhanced)",
+    aiRuleBased: "(rule-based)"
+  },
+  es: {
+    portalTitle: "Portal Civico de la Ciudad",
+    dashboardSubtitle: "Mi Panel",
+    citizenLabel: "Ciudadano:",
+    languageLabel: "Idioma:",
+    switchRoleLink: "Cambiar rol",
+    welcomeLabel: "Bienvenido de nuevo,",
+    loyaltyPointsLabel: "Puntos de lealtad",
+    recommendedForYouLabel: "✨ Recomendado para ti",
+    refreshRecs: "Actualizar",
+    impactTitle: "Mi impacto (12 meses)",
+    programsJoinedLabel: "Programas unidos",
+    volunteerHoursLabel: "Horas de voluntariado (est.)",
+    surveysCompletedLabel: "Encuestas completadas",
+    townHallsLabel: "Asambleas asistidas",
+    openCasesTitle: "Casos abiertos",
+    engagementHistoryTitle: "Historial de participacion",
+    rateRecentTitle: "Califica tu interaccion reciente",
+    submitRating: "Enviar (+5 pts)",
+    ratingThanks: "Gracias. Tus comentarios nos ayudan a mejorar.",
+    demoOnlyLabel: "Datos de demostracion",
+    resetDemo: "Restablecer demo",
+    since: "desde",
+    ptsTo: "pts para",
+    topTierReached: "Nivel maximo alcanzado. Gracias.",
+    noOpenCases: "No hay casos abiertos.",
+    opened: "Abierto",
+    noActivity: "Aun no hay actividad. Unete a un programa para empezar a ganar puntos.",
+    generatingRecs: "Generando recomendaciones...",
+    noRecs: "No hay recomendaciones por ahora.",
+    join: "Unirse",
+    couldNotEnroll: "No se pudo unir:",
+    noRecentInteractions: "No hay interacciones recientes para calificar.",
+    interactionWith: "Interaccion",
+    withAgent: "con",
+    onDate: "el",
+    unnamedAgent: "Agente",
+    alreadyRated: "Esta interaccion ya fue calificada.",
+    aiFallback: "(respaldo: IA no disponible)",
+    aiEnhanced: "(IA mejorada)",
+    aiRuleBased: "(basado en reglas)"
+  }
+};
+
+function t(key) {
+  const dict = I18N[currentLang] || I18N.en;
+  return dict[key] || I18N.en[key] || key;
+}
+
+function applyLanguage() {
+  document.documentElement.lang = currentLang;
+  document.getElementById("portalTitle").textContent = t("portalTitle");
+  document.getElementById("dashboardSubtitle").textContent = t("dashboardSubtitle");
+  document.getElementById("citizenLabel").textContent = t("citizenLabel");
+  document.getElementById("languageLabel").textContent = t("languageLabel");
+  document.getElementById("switchRoleLink").textContent = t("switchRoleLink");
+  document.getElementById("welcomeLabel").textContent = t("welcomeLabel");
+  document.getElementById("loyaltyPointsLabel").textContent = t("loyaltyPointsLabel");
+  document.getElementById("recommendedForYouLabel").textContent = t("recommendedForYouLabel");
+  document.getElementById("refreshRecs").textContent = t("refreshRecs");
+  document.getElementById("impactTitle").textContent = t("impactTitle");
+  document.getElementById("programsJoinedLabel").textContent = t("programsJoinedLabel");
+  document.getElementById("volunteerHoursLabel").textContent = t("volunteerHoursLabel");
+  document.getElementById("surveysCompletedLabel").textContent = t("surveysCompletedLabel");
+  document.getElementById("townHallsLabel").textContent = t("townHallsLabel");
+  document.getElementById("openCasesTitle").textContent = t("openCasesTitle");
+  document.getElementById("engagementHistoryTitle").textContent = t("engagementHistoryTitle");
+  document.getElementById("rateRecentTitle").textContent = t("rateRecentTitle");
+  document.getElementById("submitRating").textContent = t("submitRating");
+  document.getElementById("demoOnlyLabel").textContent = t("demoOnlyLabel");
+  document.getElementById("resetDemo").textContent = t("resetDemo");
+}
+
+function initLanguagePicker() {
+  const sel = document.getElementById("languageSelect");
+  sel.value = currentLang;
+  sel.onchange = () => {
+    currentLang = sel.value;
+    localStorage.setItem("sced_demo_lang", currentLang);
+    applyLanguage();
+    render();
+  };
+}
 
 function tierClass(name) { return "tier-" + name.replace(/\s+/g, "-"); }
 
@@ -134,13 +269,13 @@ function renderHero(c) {
   document.getElementById("heroName").textContent = c.name;
   document.getElementById("heroPoints").textContent = c.points.toLocaleString();
   const badge = `<span class="tier-badge ${tierClass(c.tier)}">${SCED.tierFor(c.points, state.tiers).icon} ${c.tier}</span>`;
-  document.getElementById("heroTier").innerHTML = badge + ` <span class="text-xs text-slate-500 ml-2">since ${SCED.fmtDate(c.tierReachedDate)}</span>`;
+  document.getElementById("heroTier").innerHTML = badge + ` <span class="text-xs text-slate-500 ml-2">${t("since")} ${SCED.fmtDate(c.tierReachedDate)}</span>`;
   const prog = SCED.tierProgress(c.points, state.tiers);
   document.getElementById("progressBar").style.width = prog.pct + "%";
   document.getElementById("progressPct").textContent = prog.pct + "%";
   document.getElementById("progressLabel").textContent = prog.next
-    ? `${prog.toNext.toLocaleString()} pts to ${prog.next.name}`
-    : "Top tier reached — thank you!";
+    ? `${prog.toNext.toLocaleString()} ${t("ptsTo")} ${prog.next.name}`
+    : t("topTierReached");
 }
 
 function renderStats(c) {
@@ -155,19 +290,19 @@ function renderStats(c) {
 
   const cases = c.openCases || [];
   document.getElementById("openCases").innerHTML = cases.length === 0
-    ? `<span class="text-slate-400">No open cases.</span>`
+    ? `<span class="text-slate-400">${t("noOpenCases")}</span>`
     : cases.map(cs => `
       <div class="border border-slate-200 rounded p-2 mb-2">
         <div class="flex justify-between text-xs text-slate-500"><span>${cs.id}</span><span>${cs.status} · ${cs.priority}</span></div>
         <div class="text-sm">${cs.subject}</div>
-        <div class="text-xs text-slate-400">Opened ${SCED.fmtDate(cs.opened)}</div>
+        <div class="text-xs text-slate-400">${t("opened")} ${SCED.fmtDate(cs.opened)}</div>
       </div>`).join("");
 }
 
 function renderHistory(c) {
   const el = document.getElementById("historyList");
   if (c.history.length === 0) {
-    el.innerHTML = `<div class="text-sm text-slate-400 py-3">No activity yet — join a program below to start earning points!</div>`;
+    el.innerHTML = `<div class="text-sm text-slate-400 py-3">${t("noActivity")}</div>`;
     return;
   }
   el.innerHTML = c.history.slice(0, 12).map(h => `
@@ -182,10 +317,10 @@ function renderHistory(c) {
 
 async function renderRecs(c) {
   const el = document.getElementById("recList");
-  el.innerHTML = `<div class="text-sm text-slate-400">Generating recommendations…</div>`;
+  el.innerHTML = `<div class="text-sm text-slate-400">${t("generatingRecs")}</div>`;
   const { recs, fallback } = await SCED_AI.recommend(c, state.programs, state.tiers);
-  document.getElementById("aiBadge").textContent = fallback ? "(fallback: AI unavailable)" : (window.SCED_OPENAI_KEY ? "(AI enhanced)" : "(rule-based)");
-  if (recs.length === 0) { el.innerHTML = `<div class="text-sm text-slate-400">No recommendations right now.</div>`; return; }
+  document.getElementById("aiBadge").textContent = fallback ? t("aiFallback") : (window.SCED_OPENAI_KEY ? t("aiEnhanced") : t("aiRuleBased"));
+  if (recs.length === 0) { el.innerHTML = `<div class="text-sm text-slate-400">${t("noRecs")}</div>`; return; }
   el.innerHTML = recs.slice(0, 4).map(r => `
     <div class="border border-slate-200 rounded-lg p-3 flex flex-wrap items-center gap-3 justify-between">
       <div class="flex-1 min-w-[220px]">
@@ -195,12 +330,12 @@ async function renderRecs(c) {
       </div>
       <div class="flex items-center gap-2">
         <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-1 rounded">+${r.points} pts</span>
-        <button data-id="${r.id}" class="enrollBtn bg-blue-700 text-white text-sm px-3 py-1.5 rounded hover:bg-blue-800">Join</button>
+        <button data-id="${r.id}" class="enrollBtn bg-blue-700 text-white text-sm px-3 py-1.5 rounded hover:bg-blue-800">${t("join")}</button>
       </div>
     </div>`).join("");
   document.querySelectorAll(".enrollBtn").forEach(b => b.onclick = () => {
     const res = SCED.awardPoints(state, c.id, b.dataset.id, "self-enroll");
-    if (!res.ok) { alert("Could not enroll: " + res.reason); return; }
+    if (!res.ok) { alert(`${t("couldNotEnroll")} ` + res.reason); return; }
     render();
   });
 }
@@ -211,7 +346,7 @@ function renderRatingPanel(c) {
   const submitBtn = document.getElementById("submitRating");
   const msg = document.getElementById("ratingMsg");
   if (!lastInteraction) {
-    ctx.textContent = "No recent interactions to rate.";
+    ctx.textContent = t("noRecentInteractions");
     selectedStars = 0;
     submitBtn.disabled = true;
     submitBtn.onclick = null;
@@ -220,7 +355,7 @@ function renderRatingPanel(c) {
     return;
   }
   const agent = state.agents.find(a => a.id === lastInteraction.agentId);
-  ctx.innerHTML = `Interaction <span class="kbd">${lastInteraction.id}</span> with <strong>${agent ? agent.name : "Agent"}</strong> on ${SCED.fmtDate(lastInteraction.date)}`;
+  ctx.innerHTML = `${t("interactionWith")} <span class="kbd">${lastInteraction.id}</span> ${t("withAgent")} <strong>${agent ? agent.name : t("unnamedAgent")}</strong> ${t("onDate")} ${SCED.fmtDate(lastInteraction.date)}`;
   const starsEl = document.getElementById("stars");
   selectedStars = 0;
   starsEl.innerHTML = [1,2,3,4,5].map(n => `<span data-n="${n}" class="text-slate-300 hover:text-yellow-400">★</span>`).join("");
@@ -234,12 +369,12 @@ function renderRatingPanel(c) {
     if (selectedStars < 1) return;
     const res = SCED.logRating(state, lastInteraction.id, c.id, lastInteraction.agentId, selectedStars, "");
     if (!res.ok) {
-      msg.textContent = "This interaction has already been rated.";
+      msg.textContent = t("alreadyRated");
       msg.classList.remove("hidden");
       return;
     }
     submitBtn.disabled = true;
-    msg.textContent = "Thanks! Your feedback helps us coach our team.";
+    msg.textContent = t("ratingThanks");
     msg.classList.remove("hidden");
     render();
   };
@@ -248,6 +383,7 @@ function renderRatingPanel(c) {
 function render() {
   const c = state.citizens.find(x => x.id === currentId) || state.citizens[0];
   currentId = c.id;
+  applyLanguage();
   populateCitizenPicker();
   renderHero(c);
   renderStats(c);
@@ -262,6 +398,7 @@ document.getElementById("refreshRecs").onclick = () => {
 };
 document.getElementById("resetDemo").onclick = (e) => { e.preventDefault(); SCED.Store.reset(); location.reload(); };
 
+initLanguagePicker();
 render();
 </script>
 </body>
