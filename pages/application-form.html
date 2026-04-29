@@ -1,0 +1,100 @@
+<!--
+  File: pages/application-form.html
+  Purpose: Mock service application form with document upload UI.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Hoosier Help-O-Matic - Application Form</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../index.html">
+            <span class="brand-dot" aria-hidden="true"></span>
+            The Hoosier Help-O-Matic
+          </a>
+          <button class="btn btn-outline nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false">Menu</button>
+          <nav class="site-nav" id="site-nav" data-nav data-open="false" aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="../index.html">Home</a></li>
+              <li><a class="nav-link" href="registration.html">Registration</a></li>
+              <li><a class="nav-link" href="login.html">Login</a></li>
+              <li><a class="nav-link" href="address.html">Address</a></li>
+              <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+              <li><a class="nav-link" href="profile.html">Profile</a></li>
+              <li><a class="nav-link" href="application-form.html">Application Form</a></li>
+              <li><a class="nav-link" href="directions-salesforce-tower.html">Directions</a></li>
+              <li><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container stack">
+          <!-- MOCK -->
+          <section class="hero">
+            <h1>Application Form</h1>
+            <p>Complete a sample application and attach mock documents.</p>
+          </section>
+
+          <section class="card stack">
+            <h2>Application Details</h2>
+            <form id="application-form" class="form-grid two-col" novalidate>
+              <div class="stack">
+                <label for="applicant-name">Applicant Name</label>
+                <input id="applicant-name" name="applicantName" type="text" required />
+              </div>
+              <div class="stack">
+                <label for="program-type">Program Type</label>
+                <select id="program-type" name="programType" required>
+                  <!-- MOCK -->
+                  <option value="">Select one</option>
+                  <option>Housing Assistance</option>
+                  <option>Childcare Support</option>
+                  <option>Workforce Training</option>
+                </select>
+              </div>
+              <div class="stack" style="grid-column: 1 / -1;">
+                <label for="app-notes">Additional Notes</label>
+                <textarea id="app-notes" name="notes" rows="4" placeholder="Add any notes for your request..."></textarea>
+              </div>
+
+              <div class="stack" style="grid-column: 1 / -1;">
+                <h3>Document Upload</h3>
+                <div id="upload-zone" class="upload-zone" tabindex="0">
+                  <p>Drag and drop files here</p>
+                  <p>or</p>
+                  <label class="btn btn-secondary" for="document-files">Choose Files</label>
+                  <input id="document-files" type="file" multiple class="visually-hidden" />
+                </div>
+                <!-- MOCK -->
+                <ul id="file-list" class="stack" aria-live="polite"></ul>
+              </div>
+
+              <div>
+                <button class="btn btn-primary" type="submit">Save Mock Application</button>
+              </div>
+            </form>
+            <p id="application-status" class="alert info">No real submission is sent in this wireframe.</p>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>The Hoosier Help-O-Matic Wireframe <!-- MOCK --></p>
+          <p>&copy; <span data-current-year></span> State of Indiana</p>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="../js/application-form.js"></script>
+  </body>
+</html>

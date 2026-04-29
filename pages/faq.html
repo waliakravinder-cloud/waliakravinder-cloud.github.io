@@ -1,0 +1,95 @@
+<!--
+  File: pages/faq.html
+  Purpose: Frequently asked questions page for citizen portal guidance.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Hoosier Help-O-Matic - FAQ</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../index.html">
+            <span class="brand-dot" aria-hidden="true"></span>
+            The Hoosier Help-O-Matic
+          </a>
+          <button class="btn btn-outline nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false">Menu</button>
+          <nav class="site-nav" id="site-nav" data-nav data-open="false" aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="../index.html">Home</a></li>
+              <li><a class="nav-link" href="registration.html">Registration</a></li>
+              <li><a class="nav-link" href="login.html">Login</a></li>
+              <li><a class="nav-link" href="address.html">Address</a></li>
+              <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+              <li><a class="nav-link" href="profile.html">Profile</a></li>
+              <li><a class="nav-link" href="application-form.html">Application Form</a></li>
+              <li><a class="nav-link" href="directions-salesforce-tower.html">Directions</a></li>
+              <li><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container stack">
+          <!-- MOCK -->
+          <section class="hero">
+            <h1>Frequently Asked Questions</h1>
+            <p>Browse common questions about this Indiana services demo portal.</p>
+          </section>
+
+          <!-- MOCK -->
+          <section class="stack">
+            <article class="card">
+              <h2>
+                <button class="btn btn-outline" data-faq-trigger aria-expanded="false" aria-controls="faq-1">
+                  Is this a real government portal?
+                </button>
+              </h2>
+              <div id="faq-1" hidden>
+                <p>No. This is a wireframe demo with placeholder content and mock interactions.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <h2>
+                <button class="btn btn-outline" data-faq-trigger aria-expanded="false" aria-controls="faq-2">
+                  Are documents really uploaded?
+                </button>
+              </h2>
+              <div id="faq-2" hidden>
+                <p>No. Selected files are only tracked in your browser memory for demo behavior.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <h2>
+                <button class="btn btn-outline" data-faq-trigger aria-expanded="false" aria-controls="faq-3">
+                  Is login secure?
+                </button>
+              </h2>
+              <div id="faq-3" hidden>
+                <p>Authentication is not implemented. Login behavior is intentionally mocked.</p>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>The Hoosier Help-O-Matic Wireframe <!-- MOCK --></p>
+          <p>&copy; <span data-current-year></span> State of Indiana</p>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="../js/faq.js"></script>
+  </body>
+</html>

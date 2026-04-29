@@ -1,0 +1,42 @@
+<!--
+  File: assets/images/dog-realistic.svg
+  Purpose: Local realistic-style dog illustration for portal visuals.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Realistic-style golden dog portrait">
+  <defs>
+    <linearGradient id="dogBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecfccb"/>
+      <stop offset="1" stop-color="#dcfce7"/>
+    </linearGradient>
+    <radialGradient id="dogFur" cx="48%" cy="34%" r="70%">
+      <stop offset="0" stop-color="#f6deb6"/>
+      <stop offset="0.6" stop-color="#d9ad73"/>
+      <stop offset="1" stop-color="#9a6f39"/>
+    </radialGradient>
+    <radialGradient id="dogEye" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#fef3c7"/>
+      <stop offset="1" stop-color="#92400e"/>
+    </radialGradient>
+    <filter id="dogShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#1f2937" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="800" height="520" fill="url(#dogBg)"/>
+  <ellipse cx="410" cy="465" rx="250" ry="34" fill="#0f172a" opacity="0.11"/>
+  <g filter="url(#dogShadow)">
+    <path d="M256 202c-42-49-35-109 19-136 52-25 104 6 116 59" fill="#8b5e34"/>
+    <path d="M544 202c42-49 35-109-19-136-52-25-104 6-116 59" fill="#8b5e34"/>
+    <ellipse cx="400" cy="252" rx="186" ry="160" fill="url(#dogFur)"/>
+    <ellipse cx="400" cy="308" rx="116" ry="90" fill="#f0ddc0"/>
+    <path d="M278 258c66-29 180-34 242-2" fill="none" stroke="#8b5e34" stroke-width="11" stroke-linecap="round" opacity="0.48"/>
+    <ellipse cx="339" cy="246" rx="26" ry="28" fill="url(#dogEye)"/>
+    <ellipse cx="462" cy="246" rx="26" ry="28" fill="url(#dogEye)"/>
+    <ellipse cx="340" cy="248" rx="8" ry="13" fill="#111827"/>
+    <ellipse cx="463" cy="248" rx="8" ry="13" fill="#111827"/>
+    <circle cx="333" cy="239" r="4" fill="#fff" opacity="0.78"/>
+    <circle cx="456" cy="239" r="4" fill="#fff" opacity="0.78"/>
+    <ellipse cx="400" cy="286" rx="25" ry="17" fill="#1f2937"/>
+    <path d="M400 302c-30 0-52 20-52 43 0 16 13 26 29 26 11 0 19-5 24-10 5 5 13 10 24 10 16 0 29-10 29-26 0-23-22-43-52-43z" fill="#7f1d1d" opacity="0.57"/>
+    <path d="M399 324c22 0 33 11 33 24 0 9-8 15-17 15-7 0-11-3-16-8-4 5-8 8-15 8-9 0-17-6-17-15 0-13 11-24 32-24z" fill="#fb7185" opacity="0.74"/>
+  </g>
+</svg>
