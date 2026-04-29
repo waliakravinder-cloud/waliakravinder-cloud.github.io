@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Center | Smart Civic Engagement Desk</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="knowledge-center">
+    <header class="site-header">
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="img" focusable="false">
+                    <rect x="6" y="10" width="52" height="44" rx="8"></rect>
+                    <path d="M18 40L32 24L46 40"></path>
+                    <path d="M24 40V28H40V40"></path>
+                </svg>
+            </div>
+            <div>
+                <p class="eyebrow">Wireframe Portal</p>
+                <h1>Smart Civic Engagement Desk</h1>
+            </div>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+            <ul id="primary-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="my-dashboard.html">My Dashboard</a></li>
+                <li><a href="agent-desk.html">Agent Desk</a></li>
+                <li><a href="engagement-history.html">Engagement History</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="knowledge-center.html" aria-current="page">Knowledge Center</a></li>
+                <li><a href="feedback-analytics.html">Feedback Analytics</a></li>
+                <li><button class="theme-toggle" type="button" data-theme-toggle>Switch to Night View</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="panel panel-accent">
+            <p class="eyebrow">Knowledge Management</p>
+            <h2>Guidance for agency workers</h2>
+            <p class="lede">A centralized view of knowledge snippets, service scripts, and escalation guidance that can be surfaced during a live citizen interaction.</p>
+        </section>
+
+        <section class="content-grid">
+            <article class="stack">
+                <!-- MOCK: knowledge articles -->
+                <div class="knowledge-item">
+                    <p class="card-kicker">Suggested Article</p>
+                    <h3>Volunteer enrollment checklist</h3>
+                    <p>Use this checklist when a citizen wants to enroll during a call center or service center interaction.</p>
+                    <div class="tag-row">
+                        <span class="tag">Enrollment</span>
+                        <span class="tag">Identity verification</span>
+                    </div>
+                </div>
+                <div class="knowledge-item">
+                    <p class="card-kicker">Policy Note</p>
+                    <h3>Loyalty-based expedited scheduling</h3>
+                    <p>Citizens at Gold Citizen tier or higher may be prioritized for eligible program openings when capacity is limited.</p>
+                    <div class="tag-row">
+                        <span class="tag">Policy</span>
+                        <span class="tag">Loyalty tiers</span>
+                    </div>
+                </div>
+                <div class="knowledge-item">
+                    <p class="card-kicker">Escalation Guide</p>
+                    <h3>Accessibility and accommodation requests</h3>
+                    <p>Escalate unresolved accessibility needs to the community support lead after the initial service script is completed.</p>
+                    <div class="tag-row">
+                        <span class="tag">Escalation</span>
+                        <span class="tag">Accessibility</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="panel stack">
+                <div>
+                    <p class="section-label">Agent Script</p>
+                    <h3>Recognition and recommendation prompt</h3>
+                </div>
+                <!-- MOCK: script content -->
+                <p class="quote">Thank you for your continued participation in our community programs. I can see you recently joined the river cleanup and shared helpful zoning feedback. You are very close to your next milestone. Would you like to join next week’s tree planting event to earn 10 more points?</p>
+                <div class="info-banner">
+                    <strong>Usage note:</strong>
+                    <p>Scripts should feel appreciative, relevant to the citizen’s interests, and aligned to the engagement history shown in the profile.</p>
+                </div>
+                <div class="utility-row">
+                    <span class="score-pill positive">Confidence: high match</span>
+                    <button class="button button-secondary" type="button">Copy script text</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Civic Engagement Desk wireframe. Static prototype built with plain HTML, CSS, and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

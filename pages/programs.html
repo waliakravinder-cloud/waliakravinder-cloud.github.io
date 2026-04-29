@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs | Smart Civic Engagement Desk</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="programs">
+    <header class="site-header">
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="img" focusable="false">
+                    <rect x="6" y="10" width="52" height="44" rx="8"></rect>
+                    <path d="M18 40L32 24L46 40"></path>
+                    <path d="M24 40V28H40V40"></path>
+                </svg>
+            </div>
+            <div>
+                <p class="eyebrow">Wireframe Portal</p>
+                <h1>Smart Civic Engagement Desk</h1>
+            </div>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+            <ul id="primary-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="my-dashboard.html">My Dashboard</a></li>
+                <li><a href="agent-desk.html">Agent Desk</a></li>
+                <li><a href="engagement-history.html">Engagement History</a></li>
+                <li><a href="programs.html" aria-current="page">Programs</a></li>
+                <li><a href="knowledge-center.html">Knowledge Center</a></li>
+                <li><a href="feedback-analytics.html">Feedback Analytics</a></li>
+                <li><button class="theme-toggle" type="button" data-theme-toggle>Switch to Night View</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="panel panel-accent">
+            <p class="eyebrow">Enrollment and Advocacy</p>
+            <h2>Programs and next best actions</h2>
+            <p class="lede">Agents can enroll citizens into recommended programs, explain point rewards, and promote participation aligned to individual interests.</p>
+        </section>
+
+        <section class="program-grid">
+            <!-- MOCK: program cards -->
+            <article class="program-card is-selected">
+                <div class="program-header">
+                    <div>
+                        <p class="card-kicker">Recommended Program</p>
+                        <h3>Tree Planting Day</h3>
+                    </div>
+                    <span class="score-pill positive">+10 points</span>
+                </div>
+                <p>Recommended for citizens with sustainability interests and near-term milestone potential.</p>
+                <div class="tag-row">
+                    <span class="tag">Outdoor</span>
+                    <span class="tag">Volunteer</span>
+                    <span class="tag">Family-friendly</span>
+                </div>
+                <div class="button-row">
+                    <button class="button button-primary" type="button">Enroll citizen</button>
+                    <button class="button button-tertiary" type="button">Read script</button>
+                </div>
+            </article>
+
+            <article class="program-card">
+                <div class="program-header">
+                    <div>
+                        <p class="card-kicker">Community Feedback</p>
+                        <h3>Accessibility Forum</h3>
+                    </div>
+                    <span class="score-pill attention">+15 points</span>
+                </div>
+                <p>Best for citizens who provide detailed service feedback and have an interest in policy improvement.</p>
+                <div class="tag-row">
+                    <span class="tag">Workshop</span>
+                    <span class="tag">Policy</span>
+                    <span class="tag">Hybrid</span>
+                </div>
+                <div class="button-row">
+                    <button class="button button-primary" type="button">Enroll citizen</button>
+                    <button class="button button-tertiary" type="button">Read script</button>
+                </div>
+            </article>
+
+            <article class="program-card">
+                <div class="program-header">
+                    <div>
+                        <p class="card-kicker">Advocacy</p>
+                        <h3>Neighborhood Safety Roundtable</h3>
+                    </div>
+                    <span class="score-pill positive">+20 points</span>
+                </div>
+                <p>Ideal for citizens with high trust, repeat participation, and local ambassador potential.</p>
+                <div class="tag-row">
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Discussion</span>
+                    <span class="tag">Evening</span>
+                </div>
+                <div class="button-row">
+                    <button class="button button-primary" type="button">Enroll citizen</button>
+                    <button class="button button-tertiary" type="button">Read script</button>
+                </div>
+            </article>
+
+            <article class="program-card">
+                <div class="program-header">
+                    <div>
+                        <p class="card-kicker">Education</p>
+                        <h3>Library Mentor Orientation</h3>
+                    </div>
+                    <span class="score-pill positive">+12 points</span>
+                </div>
+                <p>Supports citizens already engaged in youth development and literacy-related volunteering.</p>
+                <div class="tag-row">
+                    <span class="tag">Training</span>
+                    <span class="tag">Mentoring</span>
+                    <span class="tag">Monthly</span>
+                </div>
+                <div class="button-row">
+                    <button class="button button-primary" type="button">Enroll citizen</button>
+                    <button class="button button-tertiary" type="button">Read script</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="toolbar">
+                <div>
+                    <p class="section-label">Enrollment Form</p>
+                    <h3>Agent-assisted registration</h3>
+                </div>
+                <span class="badge badge-warning">Wireframe only</span>
+            </div>
+            <!-- MOCK: program enrollment form -->
+            <form class="form-grid">
+                <div class="field">
+                    <label for="citizen-name">Citizen name</label>
+                    <input id="citizen-name" type="text" value="Ava Thompson">
+                </div>
+                <div class="field">
+                    <label for="program-name">Recommended program</label>
+                    <select id="program-name">
+                        <option>Tree Planting Day</option>
+                        <option>Accessibility Forum</option>
+                        <option>Neighborhood Safety Roundtable</option>
+                        <option>Library Mentor Orientation</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="contact-channel">Preferred outreach channel</label>
+                    <select id="contact-channel">
+                        <option>Email</option>
+                        <option>Phone</option>
+                        <option>SMS</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="loyalty-note">Agent note</label>
+                    <input id="loyalty-note" type="text" value="Near Volunteer Champion milestone">
+                </div>
+                <div class="field" style="grid-column: 1 / -1;">
+                    <label for="script">Suggested script</label>
+                    <textarea id="script">Would you like to join our tree planting event next week? It fits your sustainability interests and would add 10 more points toward Volunteer Champion.</textarea>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Civic Engagement Desk wireframe. Static prototype built with plain HTML, CSS, and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

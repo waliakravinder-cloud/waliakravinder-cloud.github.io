@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Desk | Smart Civic Engagement Desk</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="agent-desk">
+    <header class="site-header">
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="img" focusable="false">
+                    <rect x="6" y="10" width="52" height="44" rx="8"></rect>
+                    <path d="M18 40L32 24L46 40"></path>
+                    <path d="M24 40V28H40V40"></path>
+                </svg>
+            </div>
+            <div>
+                <p class="eyebrow">Wireframe Portal</p>
+                <h1>Smart Civic Engagement Desk</h1>
+            </div>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+            <ul id="primary-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="my-dashboard.html">My Dashboard</a></li>
+                <li><a href="agent-desk.html" aria-current="page">Agent Desk</a></li>
+                <li><a href="engagement-history.html">Engagement History</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="knowledge-center.html">Knowledge Center</a></li>
+                <li><a href="feedback-analytics.html">Feedback Analytics</a></li>
+                <li><button class="theme-toggle" type="button" data-theme-toggle>Switch to Night View</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero panel panel-accent">
+            <div class="page-intro">
+                <p class="eyebrow">Agent Experience</p>
+                <h2>Service desk with loyalty context</h2>
+                <p class="lede">This view helps local government agents recognize loyal citizens, recommend personalized next steps, resolve issues efficiently, and access knowledge guidance during service interactions.</p>
+                <div class="status-row">
+                    <span class="badge badge-success">Live call center mode</span>
+                    <span class="status-pill">7 active citizens in queue</span>
+                    <span class="status-pill">3 high-priority loyalty milestones</span>
+                </div>
+            </div>
+            <div class="media-frame">
+                <img src="../assets/images/agent-support.svg" alt="Abstract placeholder agent desk illustration">
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <aside class="panel stack">
+                <div class="toolbar">
+                    <div>
+                        <p class="section-label">Incoming Citizens</p>
+                        <h3>Queue snapshot</h3>
+                    </div>
+                    <button class="ghost-button" type="button">Refresh mock queue</button>
+                </div>
+                <!-- MOCK: citizen queue cards -->
+                <button class="citizen-card is-selected" type="button" data-citizen-card="ava">
+                    <div class="agent-header">
+                        <div>
+                            <strong>Ava Thompson</strong>
+                            <p>Walk-in support for volunteer enrollment</p>
+                        </div>
+                        <span class="tier-pill">Gold Citizen</span>
+                    </div>
+                </button>
+                <button class="citizen-card" type="button" data-citizen-card="marcus">
+                    <div class="agent-header">
+                        <div>
+                            <strong>Marcus Lee</strong>
+                            <p>Call center inquiry about neighborhood safety roundtable</p>
+                        </div>
+                        <span class="tier-pill">Volunteer Champion</span>
+                    </div>
+                </button>
+                <button class="citizen-card" type="button" data-citizen-card="sofia">
+                    <div class="agent-header">
+                        <div>
+                            <strong>Sofia Ramirez</strong>
+                            <p>Email follow-up on accessibility forum registration</p>
+                        </div>
+                        <span class="tier-pill">Silver Citizen</span>
+                    </div>
+                </button>
+            </aside>
+
+            <section class="stack">
+                <article class="profile-panel">
+                    <!-- MOCK: selected citizen details -->
+                    <div class="citizen-summary">
+                        <div>
+                            <p class="section-label">Citizen Profile</p>
+                            <h3 data-profile-name>Ava Thompson</h3>
+                        </div>
+                        <span class="tier-pill" data-profile-tier>Gold Citizen</span>
+                    </div>
+                    <dl>
+                        <div>
+                            <dt>Loyalty Balance</dt>
+                            <dd data-profile-points>1,240 points</dd>
+                        </div>
+                        <div>
+                            <dt>Milestone</dt>
+                            <dd data-profile-milestone>40 points away from Volunteer Champion</dd>
+                        </div>
+                    </dl>
+                    <div class="callout">
+                        <strong>Recognition prompt</strong>
+                        <p data-profile-recommendation>Thank Ava for joining the river cleanup and offer a priority slot in next week's tree planting event.</p>
+                    </div>
+                </article>
+
+                <article class="insight-panel">
+                    <p class="section-label">Engagement History</p>
+                    <p data-profile-history>Recent history: river cleanup, zoning feedback survey, library mentor signup.</p>
+                    <div class="tag-row">
+                        <span class="tag">Volunteer</span>
+                        <span class="tag">Survey Response</span>
+                        <span class="tag">Service Rating</span>
+                    </div>
+                </article>
+
+                <article class="knowledge-panel">
+                    <p class="section-label">Knowledge Management Details</p>
+                    <p data-profile-knowledge>Knowledge prompt: use the volunteer fast-track script and waive repeat identity verification for this visit.</p>
+                    <ul class="bullet-list">
+                        <!-- MOCK: knowledge actions -->
+                        <li>Suggested article: Volunteer enrollment checklist</li>
+                        <li>Policy note: Loyalty members can receive expedited scheduling for eligible programs</li>
+                        <li>Escalation path: Route accessibility issues to community support lead</li>
+                    </ul>
+                    <div class="button-row">
+                        <a class="button button-primary" href="knowledge-center.html">Open knowledge center</a>
+                        <a class="button button-secondary" href="programs.html">Enroll in program</a>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section class="three-column-grid">
+            <!-- MOCK: agent action cards -->
+            <article class="card">
+                <p class="card-kicker">Next Best Action</p>
+                <h3>Recommend tree planting event</h3>
+                <p>Citizen interests and point trajectory indicate a high acceptance likelihood.</p>
+            </article>
+            <article class="card">
+                <p class="card-kicker">Issue Resolution</p>
+                <h3>Resolve using prior context</h3>
+                <p>Use the last three interactions to avoid repeat questions and shorten service time.</p>
+            </article>
+            <article class="card">
+                <p class="card-kicker">Recognition Script</p>
+                <h3>Thank the citizen for loyalty</h3>
+                <p>Personalize the conversation by naming recent civic actions and acknowledging milestones.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Civic Engagement Desk wireframe. Static prototype built with plain HTML, CSS, and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/agent-desk.js"></script>
+</body>
+</html>

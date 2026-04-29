@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | Smart Civic Engagement Desk</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="dashboard">
+    <header class="site-header">
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="img" focusable="false">
+                    <rect x="6" y="10" width="52" height="44" rx="8"></rect>
+                    <path d="M18 40L32 24L46 40"></path>
+                    <path d="M24 40V28H40V40"></path>
+                </svg>
+            </div>
+            <div>
+                <p class="eyebrow">Wireframe Portal</p>
+                <h1>Smart Civic Engagement Desk</h1>
+            </div>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+            <ul id="primary-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="my-dashboard.html" aria-current="page">My Dashboard</a></li>
+                <li><a href="agent-desk.html">Agent Desk</a></li>
+                <li><a href="engagement-history.html">Engagement History</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="knowledge-center.html">Knowledge Center</a></li>
+                <li><a href="feedback-analytics.html">Feedback Analytics</a></li>
+                <li><button class="theme-toggle" type="button" data-theme-toggle>Switch to Night View</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero panel panel-accent">
+            <div class="page-intro">
+                <p class="eyebrow">Citizen Experience</p>
+                <h2>My Dashboard</h2>
+                <p class="lede">A citizen-facing profile view showing loyalty points, engagement history, current tier, recent service ratings, and recommended next steps.</p>
+                <div class="status-row">
+                    <span class="tier-pill">Gold Citizen</span>
+                    <span class="status-pill">1,240 loyalty points</span>
+                    <span class="badge badge-success">4.8 service rating average</span>
+                </div>
+            </div>
+            <div class="media-frame">
+                <img src="../assets/images/civic-dashboard.svg" alt="Abstract placeholder dashboard illustration">
+            </div>
+        </section>
+
+        <section class="metrics-grid">
+            <!-- MOCK: citizen dashboard metrics -->
+            <article class="stat-card">
+                <span class="meta-label">Points Balance</span>
+                <strong>1,240</strong>
+                <p>Earned from volunteering, event attendance, and policy feedback.</p>
+            </article>
+            <article class="stat-card">
+                <span class="meta-label">Current Tier</span>
+                <strong>Gold Citizen</strong>
+                <p>Unlocked after consistent program participation across three civic categories.</p>
+            </article>
+            <article class="stat-card">
+                <span class="meta-label">Next Milestone</span>
+                <strong>40 points</strong>
+                <p>Needed to become a Volunteer Champion and access fast-track event registration.</p>
+            </article>
+            <article class="stat-card">
+                <span class="meta-label">Latest Rating</span>
+                <strong>5 / 5</strong>
+                <p>Submitted after a neighborhood services call with positive comments about clarity.</p>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="profile-panel">
+                <!-- MOCK: citizen profile summary -->
+                <p class="section-label">Profile Snapshot</p>
+                <h3>Ava Thompson</h3>
+                <dl>
+                    <div>
+                        <dt>Preferred Programs</dt>
+                        <dd>Parks, sustainability, youth mentoring</dd>
+                    </div>
+                    <div>
+                        <dt>Recent Contact</dt>
+                        <dd>Service center visit, April 24</dd>
+                    </div>
+                    <div>
+                        <dt>Top Achievement</dt>
+                        <dd>River Cleanup Leader</dd>
+                    </div>
+                    <div>
+                        <dt>Advocacy Potential</dt>
+                        <dd>High</dd>
+                    </div>
+                </dl>
+                <div class="info-banner">
+                    <strong>AI-powered recommendation:</strong>
+                    <p>Join next week’s tree planting event to earn 10 points and reach Volunteer Champion status.</p>
+                </div>
+            </article>
+
+            <article class="table-card">
+                <div class="toolbar">
+                    <div>
+                        <p class="section-label">Recent Engagement</p>
+                        <h3>History overview</h3>
+                    </div>
+                    <div class="filter-row" aria-label="History filters">
+                        <button class="filter-button is-active" type="button" data-filter="all">All</button>
+                        <button class="filter-button" type="button" data-filter="volunteer">Volunteering</button>
+                        <button class="filter-button" type="button" data-filter="feedback">Feedback</button>
+                        <button class="filter-button" type="button" data-filter="service">Service</button>
+                    </div>
+                </div>
+                <!-- MOCK: engagement history rows -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Date</th>
+                            <th>Points</th>
+                            <th>Outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-history-type="volunteer">
+                            <td>River cleanup volunteer shift</td>
+                            <td>Apr 22</td>
+                            <td>+25</td>
+                            <td>Milestone badge earned</td>
+                        </tr>
+                        <tr data-history-type="feedback">
+                            <td>Zoning improvement survey</td>
+                            <td>Apr 18</td>
+                            <td>+10</td>
+                            <td>Recommendations updated</td>
+                        </tr>
+                        <tr data-history-type="service">
+                            <td>Service center visit rating</td>
+                            <td>Apr 14</td>
+                            <td>+5</td>
+                            <td>5-star review submitted</td>
+                        </tr>
+                        <tr data-history-type="volunteer">
+                            <td>Library reading mentor signup</td>
+                            <td>Apr 08</td>
+                            <td>+20</td>
+                            <td>Pending orientation confirmation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section class="three-column-grid">
+            <!-- MOCK: recommendation cards -->
+            <article class="recommendation-card">
+                <p class="card-kicker">Next Best Action</p>
+                <h3>Register for tree planting</h3>
+                <p>Aligns with high sustainability participation and unlocks a near-term milestone.</p>
+                <div class="recommendation-actions">
+                    <a class="button button-primary" href="programs.html">View program</a>
+                </div>
+            </article>
+            <article class="recommendation-card">
+                <p class="card-kicker">Recognition</p>
+                <h3>Share your badge</h3>
+                <p>Prompt citizen advocacy by letting Ava celebrate the latest River Cleanup Leader milestone.</p>
+                <div class="recommendation-actions">
+                    <button class="button button-tertiary" type="button">Preview message</button>
+                </div>
+            </article>
+            <article class="recommendation-card">
+                <p class="card-kicker">Service Feedback</p>
+                <h3>Rate your last interaction</h3>
+                <p>Citizen can submit a quick service rating to help management improve training and service quality.</p>
+                <div class="recommendation-actions">
+                    <a class="button button-secondary" href="feedback-analytics.html">See sample analytics</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Civic Engagement Desk wireframe. Static prototype built with plain HTML, CSS, and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/my-dashboard.js"></script>
+</body>
+</html>

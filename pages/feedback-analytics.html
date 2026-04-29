@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Analytics | Smart Civic Engagement Desk</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="feedback-analytics">
+    <header class="site-header">
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="img" focusable="false">
+                    <rect x="6" y="10" width="52" height="44" rx="8"></rect>
+                    <path d="M18 40L32 24L46 40"></path>
+                    <path d="M24 40V28H40V40"></path>
+                </svg>
+            </div>
+            <div>
+                <p class="eyebrow">Wireframe Portal</p>
+                <h1>Smart Civic Engagement Desk</h1>
+            </div>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+            <ul id="primary-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="my-dashboard.html">My Dashboard</a></li>
+                <li><a href="agent-desk.html">Agent Desk</a></li>
+                <li><a href="engagement-history.html">Engagement History</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="knowledge-center.html">Knowledge Center</a></li>
+                <li><a href="feedback-analytics.html" aria-current="page">Feedback Analytics</a></li>
+                <li><button class="theme-toggle" type="button" data-theme-toggle>Switch to Night View</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="panel panel-accent">
+            <div class="feedback-header">
+                <div>
+                    <p class="eyebrow">Management Insight</p>
+                    <h2>Agent feedback analytics and coaching cues</h2>
+                    <p class="lede">Citizen service ratings are aggregated so managers can identify patterns, support training, and recognize high-performing staff.</p>
+                </div>
+                <div class="filter-row" aria-label="Analytics range">
+                    <button class="tab-button" type="button" data-range="weekly">Weekly</button>
+                    <button class="tab-button is-active" type="button" data-range="monthly">Monthly</button>
+                    <button class="tab-button" type="button" data-range="quarterly">Quarterly</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="analytics-grid">
+            <article class="chart-card">
+                <!-- MOCK: top-level score -->
+                <p class="section-label">Service Score</p>
+                <strong class="point-value" data-score-value>4.4 / 5</strong>
+                <p data-score-trend>Citizen ratings are stable with strong volunteer-program interactions.</p>
+            </article>
+            <article class="chart-card">
+                <p class="section-label">Coaching Focus</p>
+                <p data-coaching-focus>Coaching focus: reinforce escalation handling for in-person disputes.</p>
+            </article>
+            <article class="chart-card">
+                <p class="section-label">Recognition Opportunity</p>
+                <p>Highlight teams that consistently connect loyalty milestones to successful next-best-action enrollments.</p>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="chart-card">
+                <p class="section-label">Rating Dimensions</p>
+                <!-- MOCK: bar chart -->
+                <div class="bar-chart">
+                    <div class="bar-row">
+                        <span>Empathy</span>
+                        <div class="bar-track"><div class="bar-fill" data-bar-key="empathy" style="width: 84%;"></div></div>
+                        <strong>84%</strong>
+                    </div>
+                    <div class="bar-row">
+                        <span>Clarity</span>
+                        <div class="bar-track"><div class="bar-fill" data-bar-key="clarity" style="width: 75%;"></div></div>
+                        <strong>75%</strong>
+                    </div>
+                    <div class="bar-row">
+                        <span>Speed</span>
+                        <div class="bar-track"><div class="bar-fill" data-bar-key="speed" style="width: 78%;"></div></div>
+                        <strong>78%</strong>
+                    </div>
+                    <div class="bar-row">
+                        <span>Follow-up</span>
+                        <div class="bar-track"><div class="bar-fill" data-bar-key="followup" style="width: 71%;"></div></div>
+                        <strong>71%</strong>
+                    </div>
+                </div>
+            </article>
+
+            <article class="stack">
+                <div class="feedback-card">
+                    <p class="section-label">Citizen Quote</p>
+                    <!-- MOCK: feedback comment -->
+                    <p class="quote">The agent thanked me for my volunteer work before helping with my permit question. It felt personalized and efficient.</p>
+                </div>
+                <div class="feedback-card">
+                    <p class="section-label">Training Recommendation</p>
+                    <p>Managers should coach teams to close interactions with clear follow-up steps and an invitation to rate the service experience.</p>
+                </div>
+                <div class="feedback-card">
+                    <p class="section-label">Escalation Watch</p>
+                    <p>Monitor repeated low scores tied to complex service center visits and pair them with knowledge article usage data.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Civic Engagement Desk wireframe. Static prototype built with plain HTML, CSS, and vanilla JavaScript.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/feedback-analytics.js"></script>
+</body>
+</html>
